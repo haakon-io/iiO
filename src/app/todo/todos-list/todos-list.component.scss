@@ -1,0 +1,59 @@
+//todo form styles
+  .todo-card {
+    margin: 20px 10px;
+    outline:10px solid rgb(44,19,90, .5);
+  }
+
+  .todo-row{
+    width:100%;
+  }
+
+  .todo-input {
+    width:350px;
+  }
+
+  #todo-done {
+    width:70px;
+    margin-right: 6px;
+  }
+
+  //buttons
+#button-container {
+  display: flex;
+}
+#button-container div {
+  // margin: 0 10px;
+  margin-left:auto;
+  margin-right:auto;
+  width: 50%;
+  display: flex;
+
+}
+#button-container div button {
+  margin-left: auto;
+  margin-right:auto;
+}
+
+//Row delete button
+.icon-garbage {
+  font-size: 30px;
+  color:orangered;
+  display: inline;
+  vertical-align: middle;
+}
+.btn-garbage {
+  margin:auto;
+}
+
+@media(min-width:900px){
+  .container {
+    width:45vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flexbox;
+  }
+
+  .todo-input {
+    width:70%;
+  }
+}
