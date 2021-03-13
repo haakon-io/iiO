@@ -1,0 +1,59 @@
+<div class="container">
+<mat-card class="todo-card mat-elevation-z10">
+
+  <mat-card-header>
+
+      <mat-card-title>Todo List</mat-card-title>
+      <mat-card-subtitle (click)="deleteAll()">Clear list</mat-card-subtitle>
+  </mat-card-header>
+
+<div class="add-todo-form" [formGroup]="form">
+
+  <ng-container formArrayName="todos">
+    <ng-container *ngFor="let todoForm of this.todos.controls; let i = index">
+      <div class="todo-row" [formGroup]="todoForm">
+
+        <mat-form-field appearance="outline" class="todo-input">
+          <input matInput placeholder="Description" formControlName="description" >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" id="todo-done">
+          <mat-select placeholder="Completed?" formControlName="completed">
+            <mat-option value="false">No</mat-option>
+            <mat-option value="true">Yes</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      <div class="icon-garbage">
+        <mat-icon [inline]="true" (click)="deleteTodo(i)" class="btn-garbage">delete_forever</mat-icon>
+      </div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+
+
+  <div id="button-container">
+
+      <div>
+        <button mat-mini-fab (click)="addTodo()" class="mat-raised-button mat-primary">
+          <mat-icon class="btn-add-todo">add</mat-icon>
+        </button>
+      </div>
+
+      <div>
+        <button class="mat-raised-button mat-primary" id="btnSubmit" (click)="saveAll()">Save</button>
+      </div>
+  </div>
+
+</div>
+
+<!-- DEBUG <div>
+  form valid? {{ form.valid | json}}
+
+  {{ todos.value | json}}
+</div> -->
+
+</mat-card>
+
+</div>
